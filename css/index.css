@@ -1,0 +1,392 @@
+body {
+  font-family: "Arial", sans-serif;
+  color: #333;
+  background-color: #f8f9fa !important;
+}
+
+.navbar {
+  background-color: #f8f9fa !important;
+}
+
+.nav-link.active {
+  background-color: #4caf50;
+  color: #fff !important;
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.nav-link {
+  margin: 0 10px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  color: #4caf50 !important;
+  transition: all 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #4caf50;
+  color: #fff !important;
+}
+
+.hero-section h1 {
+  color: #333;
+}
+
+.hero-section p {
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.custom-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-card img {
+  border-radius: 15px;
+}
+
+.custom-card .card-body {
+  text-align: center;
+}
+.card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 15px; /* Reduced padding */
+}
+
+.card-img-right {
+  width: 120px; /* Adjusted width to match smaller height */
+  height: 100%;
+  object-fit: cover;
+  margin-left: 20px;
+  border-radius: 0 8px 8px 0;
+}
+
+.big-sale-product {
+  background: linear-gradient(45deg, #f7d9d9, #f5e6e8);
+  max-height: 300px; /* Set maximum height for the first card */
+}
+
+.new-category,
+.new-product {
+  max-height: 144px; /* Each smaller card takes up half the height of the first card */
+  background: #e6f3ee; /* Example background color */
+}
+
+.card-title {
+  font-size: 1.6rem; /* Slightly reduced font size */
+  font-weight: bold;
+  color: #2b2d42;
+  margin-bottom: 5px; /* Adjusted for spacing */
+}
+
+.card-text {
+  font-size: 1.1rem; /* Slightly reduced font size */
+  font-weight: 300; /* Lighter font for description */
+  color: #2b2d42;
+  margin-bottom: 10px; /* Adjusted for spacing */
+}
+
+.price {
+  font-size: 1.3rem; /* Slightly reduced font size */
+  font-weight: bold;
+  color: #2b2d42;
+  margin-bottom: 10px; /* Adjusted for spacing */
+  background: #b3b0b0;
+  padding: 5px;
+  border-radius: 22px;
+  text-align: center;
+}
+
+.btn-outline-dark {
+  color: #2b2d42;
+  border-color: #2b2d42;
+  border-radius: 20px; /* Rounded corners for button */
+  font-weight: bold;
+  padding: 8px 16px; /* Reduced padding for smaller button size */
+  text-transform: uppercase; /* Convert button text to uppercase */
+}
+
+.btn-outline-dark:hover {
+  background-color: #2b2d42;
+  color: #fff;
+}
+
+.row.h-100 > .col-md-12 {
+  height: 50%;
+}
+
+.card.h-100 {
+  height: 100%;
+}
+
+.d-flex.flex-column.justify-content-between {
+  text-align: left; /* Align text to the left */
+  justify-content: center; /* Vertically center the content */
+}
+
+.card-title {
+  margin-top: auto; /* Pushes the title to the top */
+}
+
+.card-text {
+  margin-top: 10px;
+  margin-bottom: auto; /* Pushes the text to be in the middle */
+}
+
+.price {
+  margin-bottom: auto; /* Pushes the price to be in the middle */
+}
+
+.btn-outline-dark {
+  margin-top: auto; /* Pushes the button to the bottom */
+}
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+}
+
+.custom-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.custom-card:hover {
+  transform: scale(1.05);
+}
+
+.card-img-top {
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+  height: 200px;
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+.custom-card .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.custom-card .card-text {
+  margin-bottom: 1rem;
+}
+
+.home-testimonial-bottom {
+  background-color: #f8f8f8;
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  position: relative;
+  top: 222px;
+}
+.home-testimonial h3 {
+  color: var(--orange);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.testimonial-inner {
+  position: relative;
+  top: -174px;
+}
+.testimonial-pos {
+  position: relative;
+  top: 24px;
+}
+.testimonial-inner .tour-desc {
+  border-radius: 5px;
+  padding: 40px;
+}
+.color-grey-3 {
+  font-family: "Montserrat", Sans-serif;
+  font-size: 14px;
+  color: #6c83a2;
+}
+.testimonial-inner img.tm-people {
+  width: 60px;
+  height: 60px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  max-width: none;
+}
+.link-name {
+  font-family: "Montserrat", Sans-serif;
+  font-size: 14px;
+  color: #6c83a2;
+}
+.link-position {
+  font-family: "Montserrat", Sans-serif;
+  font-size: 12px;
+  color: #6c83a2;
+}
+.feedback-form {
+  position: relative;
+  top: 100px;
+  margin: auto;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form label {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.feedback-form textarea {
+  height: 150px;
+  resize: none;
+}
+
+.feedback-form button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+.plants-importance img {
+  width: 100%; /* Make the image fully responsive */
+  border-radius: 20px; /* Reduce the border-radius for better responsiveness */
+}
+
+.plants-importance h2 {
+  font-size: 54px; /* Default font size */
+  text-align: center; /* Center the text for better readability */
+  margin-top: 20px; /* Add some top margin for spacing */
+}
+
+@media (max-width: 768px) {
+  .plants-importance h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .plants-importance .row {
+    flex-direction: column; /* Stack the columns vertically on smaller screens */
+    text-align: center;
+  }
+
+  .plants-importance .col-lg-6 {
+    position: static; /* Remove the positioning on smaller screens */
+    margin-top: 20px; /* Add top margin for spacing */
+  }
+
+  .plants-importance img {
+    border-radius: 20px; /* Further reduce the border-radius for small screens */
+  }
+}
+.hero-section h1 {
+  font-family: "Times New Roman", Times, serif;
+  text-align: left; /* Default text alignment */
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 32px; /* Font size for mobile screens */
+    text-align: center; /* Center the text on mobile screens */
+  }
+}
+@media (max-width: 767px) {
+  .hero-section .btn-container {
+    text-align: center; /* Center align button container */
+  }
+
+  .hero-section .btn-container .btn {
+    display: inline-block; /* Ensure the button is treated as an inline element */
+  }
+}
+/* Default font size for larger screens */
+.heading-title {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 60px;
+}
+
+/* Responsive font size for mobile screens */
+@media (max-width: 768px) {
+  .heading-title {
+    font-size: 32px;
+  }
+}
+
+/* General styling for the heading */
+.importance-heading {
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .plants-importance .row {
+      text-align: center; /* Center the content on mobile */
+    }
+  
+    .plants-importance .col-lg-6 {
+      margin-bottom: 20px; /* Add some margin to separate columns on mobile */
+    }
+  
+    .importance-heading {
+      font-size: 40px; /* Font size for mobile screens */
+    }
+  
+    .plants-importance img {
+      width: 100%; /* Make the image responsive */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 50%; /* Ensure the border radius remains consistent */
+    }
+  }
+  
+/* Center and style heading text */
+.heading-text {
+  font-size: 40px; /* Font size for mobile phones */
+}
+
+/* Center the heading on mobile devices */
+@media (max-width: 768px) {
+  .heading-text {
+    text-align: center; /* Center text */
+  }
+}
+/* Default font size for larger screens */
+.testimonial-pos h2 {
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  /* Font size adjustment for mobile screens */
+  @media (max-width: 768px) {
+    .testimonial-pos h2 {
+      font-size: 32px; /* Font size for mobile screens */
+      text-align: center;
+    }
+  }
+  

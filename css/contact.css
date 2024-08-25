@@ -1,0 +1,36 @@
+.contact-hero {
+    background-image: url('../images/high-angle-view-of-variety-of-succulent-plants-royalty-free-image-1584462052.jpg'); /* Replace with your desired background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .contact-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Overlay for text readability */
+    z-index: -1;
+  }
+  
+  .contact-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .contact-hero p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-hero .btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+  }
+  

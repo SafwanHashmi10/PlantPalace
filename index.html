@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plant Palace</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+    <style>
+       .alert-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1050; 
+        }
+    </style>
+  </head>
+  <body style="overflow-x: hidden;">
+    <!-- Success Alert -->
+<div class="alert-container">
+  <div id="success-alert" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+    <strong>Success!</strong> Your order has been placed
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+
+  <!-- Cart Modal -->
+  <div
+  class="modal fade"
+  id="cartModal"
+  tabindex="-1"
+  aria-labelledby="cartModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div id="cart-items"></div>
+        <div class="mt-3">
+          <strong
+            >Total Price: $<span id="cart-total-price">0.00</span></strong
+          >
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+        <button type="button" class="btn btn-primary" id="place-order-btn">
+          Place Order
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal for Product Overview -->
+<div
+class="modal fade"
+id="productModal"
+tabindex="-1"
+aria-labelledby="productModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog modal-dialog-centered modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5" id="productModalLabel">
+        Product Overview
+      </h1>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="" id="product_img" alt="" class="img-fluid" />
+        </div>
+        <div class="col-md-6">
+          <h2 class="fs-5 fw-semibold mb-4" id="product_name"></h2>
+          <p class="fs-6" id="product_scientific_name"></p>
+          <p class="fs-6" id="product_category"></p>
+          <p class="fs-6" id="product_origin"></p>
+          <p class="fs-6" id="product_watering_cycle"></p>
+          <p class="fs-6" id="product_light_requirements"></p>
+          <p class="fs-6" id="product_desc"></p>
+          <p class="fs-5 text-red fw-bold" id="product_price"></p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn text-muted"
+        data-bs-dismiss="modal"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="./images/Screenshot_91-removebg-preview.png" alt="Plant Palace Logo" class="img-fluid"  width="253px"/>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./shop.html">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./contact.html">Contact</a>
+        </li>
+      </ul>
+      <div>
+        <a href="#" class="nav-link position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+          <img width="40px" src="./images/shopping-cart.png" />
+          <span id="cart-counter" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<section class="hero-section">
+  <div class="container-fluid ms-5">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-8 py-4 order-md-3">
+        <img src="./images/indoor-plants-studio_23-2151022054.jpg" alt="Hero Image" class="img-fluid rounded w-100" />
+      </div>
+      <div class="col order-md-2"></div>
+      <div class="col-12 col-md-3 order-md-1 text-center text-md-start">
+        <h1 class="display-3" style="font-family: 'Times New Roman', Times, serif;">Make your HOME <span class="text-success">beautiful</span> with plants</h1>
+        <p class="mt-3">A cozy home is decorated with the freshness of green and fresh plants, come on, check out all our plants, don’t run out.</p>
+        <a href="./shop.html" class="btn btn-success btn-lg rounded-pill">Buy Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+   <!-- New Arrivals Section -->
+<section class="new-arrivals-section py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4 mt-3 heading-title">New <span class="text-success">Arrivals</span> in this week</h2>
+    <div class="row align-items-stretch">
+        <!-- First Column with Single Large Card -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="card big-sale-product h-100 d-flex flex-column">
+                <div class="d-flex flex-row-reverse h-100">
+                    <img src="./images/Screenshot_94-removebg-preview.png" class="card-img-right" alt="Interior Plant">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Big <span class="text-success">Sale</span> Product</h5>
+                        <p class="card-text">Plants for Decoration</p>
+                        <p class="price">Starting From <strong>$10</strong></p>
+                        <a href="./shop.html" class="btn btn-outline-success mt-auto">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Second Column with Two Smaller Cards -->
+        <div class="col-lg-6">
+            <div class="row h-100">
+                <div class="col-md-10 mb-4 mb-md-0">
+                    <div class="card new-category h-100 d-flex flex-row-reverse">
+                        <img src="./images/Screenshot_100-removebg-preview.png" class="card-img-right" alt="Monsera Plant">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title">New Category</h5>
+                            <p class="card-text">Succulents</p>
+                            <a href="./shop.html" class="btn btn-outline-success mt-auto">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 mt-2">
+                    <div class="card new-product h-100 d-flex flex-row-reverse">
+                        <img src="./images/images__6_-removebg-preview.png" class="card-img-right" alt="Garden Plant">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title">New Product</h5>
+                            <p class="card-text">ZZ Plant</p>
+                            <a href="./shop.html" class="btn btn-outline-success mt-auto">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="featured-products-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-4 heading-title" style="font-family: 'Times New Roman', Times, serif;">
+      <span style="color: green;">Featured</span> Products
+    </h2>
+    <div class="row products-container">
+      <!-- Product cards will be inserted here dynamically -->
+    </div>
+  </div>
+</section>
+
+
+<section class="plants-importance py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <img src="../images/photo-1483794344563-d27a8d18014e.jpg" alt="" width="600px" style="border-radius: 120px;">
+      </div>
+      <div class="col-lg-6 mt-5">
+        <h2 class="importance-heading" style="font-family: 'Times New Roman', Times, serif;">
+          We have made the <span style="color: green;">beauty</span> of plants one of the most <span style="color: green;">beautiful</span> features of your home
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+
+    <section class="home-testimonial">
+      <div class="container-fluid">
+          <div class="row d-flex justify-content-center testimonial-pos">
+              <div class="col-md-12 d-flex justify-content-center">
+                  <h2 style="font-family: 'Times New Roman', Times, serif;">Explore the <span style="color: green;">Customers</span> experience</h2>
+              </div>
+          </div>
+          <section class="home-testimonial-bottom">
+              <div class="container testimonial-inner">
+                  <div class="row d-flex justify-content-center">
+                      <div class="col-md-4 style-3 py-3">
+                          <div class="tour-item ">
+                              <div class="tour-desc bg-white">
+                                  <div class="tour-text color-grey-3 text-center">&ldquo;Plant Palace transformed my home into a green haven. The quality of plants is exceptional, and their care instructions made it easy for a beginner like me to keep them thriving.&rdquo;</div>
+                                  <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="https://images.pexels.com/photos/6625914/pexels-photo-6625914.jpeg" alt=""></div>
+                                  <div class="link-name d-flex justify-content-center">Balbir Kaur</div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-4 style-3 py-3">
+                          <div class="tour-item ">
+                              <div class="tour-desc bg-white">
+                                  <div class="tour-text color-grey-3 text-center">&ldquo;I've always struggled with keeping plants alive, but Plant Palace made it simple. Their selection is fantastic, and the plants arrived in perfect condition. My home feels so much more alive now&rdquo;</div>
+                                  <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""></div>
+                                  <div class="link-name d-flex justify-content-center">Balbir Kaur</div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-4 style-3 py-3">
+                          <div class="tour-item ">
+                              <div class="tour-desc bg-white">
+                                  <div class="tour-text color-grey-3 text-center">&ldquo;Plant Palace exceeded my expectations! The variety is great, and the customer service is excellent. The plants I ordered are thriving, and they’ve added so much charm to my living space.&rdquo;</div>
+                                  <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="https://images.pexels.com/photos/4946604/pexels-photo-4946604.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""></div>
+                                  <div class="link-name d-flex justify-content-center">Balbir Kaur</div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+          </section>
+  </section>
+  <!-- Footer -->
+
+  <h1 style="font-family: 'Times New Roman', Times, serif; position: relative; top: 100px;" class="text-center">Your <span style="color: green;">Feedback</span> Matters</h1>
+  <div class="container mt-4">
+    <form class="feedback-form">
+      <div class="mb-3 text-center">
+        <label for="feedbackInput" class="form-label heading-text">Feedback</label>
+        <textarea class="form-control" id="feedbackInput" placeholder="Give your feedback for our website" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+  
+<div class="alert-container">
+  <div id="success-alert" class="alert alert-success d-none" role="alert">
+      Your feedback has been submitted.
+  </div>
+</div>
+
+  <footer class="text-center text-white mt-5" style="background-color: #55b948; position: relative; top: 100px;">
+    <!-- Grid container -->
+     <h2 style="font-family: 'Times New Roman', Times, serif; color: white; " class="text-center">Sitemap</h2>
+    <div class="container">
+      <!-- Section: Links -->
+      <section class="mt-2">
+
+        <!-- Grid row-->
+        <div class="row text-center d-flex justify-content-center pt-5">
+          <!-- Grid column -->
+          <div class="col-md-4">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="index.html" class="text-white">Home</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="./shop.html" class="text-white">Products</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!" class="text-white">Contact</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+      <hr class="my-5" />
+
+      <!-- Section: Text -->
+      <section class="mb-5">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+              distinctio earum repellat quaerat voluptatibus placeat nam,
+              commodi optio pariatur est quia magnam eum harum corrupti
+              dicta, aliquam sequi voluptate quas.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Text -->
+
+      <!-- Section: Social -->
+      <section class="text-center mb-5">
+        <a href="" class="text-white me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-github"></i>
+        </a>
+      </section>
+      <!-- Section: Social -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/"
+         >Plant Palace</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/shop.js"></script>
+    <script>
+      document.querySelector('.feedback-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting the traditional way
+
+    // Show the success alert
+    const alert = document.getElementById('success-alert');
+    alert.classList.remove('d-none');
+
+    // Hide the alert after 3 seconds
+    setTimeout(() => {
+        alert.classList.add('d-none');
+    }, 3000);
+
+    // Clear the form
+    this.reset();
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const placeOrderBtn = document.getElementById('place-order-btn');
+  const successAlert = document.getElementById('success-alert');
+  const cartCounter = document.getElementById('cart-counter');
+
+  if (placeOrderBtn) {
+    placeOrderBtn.addEventListener('click', function() {
+      // Show the success alert
+      successAlert.style.display = 'block';
+      
+      // Hide the alert after 5 seconds
+      setTimeout(() => {
+        successAlert.style.display = 'none';
+      }, 5000);
+
+      // Clear the cart
+      localStorage.removeItem('cartItems'); 
+
+      // Reset cart counter
+      cartCounter.textContent = '0';
+    });
+  }
+});
+
+
+  </script>
+  </body>
+</html>
